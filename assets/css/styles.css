@@ -3,6 +3,13 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
+  --container-color: #f9f9f9;
+  --border-color: #ddd;
+  --hover-border-color: #ccc;
+  --hover-bg-color: #eaeaea;
+  --first-color: #ff6b6b;
+  --h2-font-size: 1.5rem;
+  --text-color: #333;
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
@@ -23,9 +30,9 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -45,8 +52,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -71,7 +78,7 @@ button {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
 
 input,
@@ -80,7 +87,10 @@ button {
   outline: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
@@ -102,14 +112,45 @@ img {
 
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
-
-
+body.dark-theme {
+  --title-color: hsl(230, 48%, 85%);
+  --text-color: hsl(230, 16%, 70%);
+  --border-color: hsl(230, 12%, 18%);
+  --body-color: hsl(230, 12%, 8%);
+  --container-color: hsl(230, 12%, 12%);
+}
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
+.dark-theme .shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.4);
+}
 
+.dark-theme .nav_menu {
+  box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.4);
+}
 
+.dark-theme .scrollup {
+  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.4);
+}
+
+.dark-theme .search,
+.dark-theme .login {
+  background-color: hsla(230, 12%, 8%, 0.6);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsla(230, 16%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsla(230, 16%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(230, 16%, 35%);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1220px;
@@ -125,7 +166,7 @@ img {
   padding-block: 5rem 1rem;
 }
 
-.section__title {
+.section_title {
   text-align: center;
   font-size: var(--h1-font-size);
   font-family: var(--second-font);
@@ -137,76 +178,1210 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
 
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.nav_logo {
+  font-size: 1.25rem;
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.1);
+    padding: 1.25rem 4rem;
+    transition: background-color 0.4s;
+  }
+}
 
+.nav_list {
+  display: flex;
+  justify-content: space-between;
+}
 
+.nav_link {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+.nav_link span {
+  display: none;
+}
+
+.nav_link i {
+  font-size: 1.25rem;
+}
+
+.nav_link :hover {
+  color: var(--first-color);
+}
+
+.nav_actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav_actions i {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.nav_actions i:hover {
+  color: var(--first-color);
+}
 /* Add shadow header */
 
-
 /* Active link */
-
-
+.active-link {
+  color: var(--first-color);
+}
 /*=============== SEARCH ===============*/
+.search {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-fixed);
+  background-color: hsla(230, 12%, 96%, 0.6);
+  backdrop-filter: blur(16px);
+  padding: 8rem 1.5rem;
+  transition: top 0.4s;
+}
 
+.search_form {
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding-inline: 1rem;
+}
+
+.search_icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.search_input {
+  width: 100%;
+  padding-block: 1rem;
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+.search_close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
 /* Show search */
-
-
+.show-search {
+  top: 0;
+}
 /*=============== LOGIN ===============*/
+.login {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-fixed);
+  background-color: hsla(230, 12%, 96%, 0.6);
+  backdrop-filter: blur (16px);
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: top 0.4s;
+}
+.login_form {
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--border-color);
+  row-gap: 1.25rem;
+}
 
+.login_title {
+  font-size: var(--h2-font-size);
+}
 
+.login_group {
+  row-gap: 1.25rem;
+}
+
+.login_label {
+  display: block;
+  text-align: initial;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.25rem;
+}
+
+.login_input {
+  width: 100%;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  color: var(--text-color);
+}
+
+.login_signup,
+.login_forgot {
+  display: block;
+  font-size: var(--smaller-font-size);
+}
+
+.login_signup {
+  margin-bottom: 0.5rem;
+}
+
+.login_signup a {
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.login_forgot {
+  color: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
+.login_button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.login_close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 /* Show login */
-
+.show-login {
+  top: 0;
+}
 
 /*=============== HOME ===============*/
+.home_swiper {
+  margin: initial;
+}
 
+.home_container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+}
+
+.home_data {
+  text-align: center;
+}
+
+.home_title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+
+.home_description {
+  margin-bottom: 2rem;
+}
+
+.home_images {
+  display: grid;
+}
+
+.home_article,
+.home_img {
+  width: 220px;
+  transition: scale 0.4s;
+}
+
+.home_article {
+  transform: scale(0.8);
+}
 
 /* Swiper class */
-
-
+.swiper-slide-active,
+.swiper-slide-duplicate-active {
+  transform: scale(1);
+}
 /*=============== BUTTON ===============*/
+.button {
+  display: inline;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 1.5rem;
+  transition: box-shadow 0.4s;
+  border-radius: 10px;
+}
 
-
+.button:hover {
+  box-shadow: 0 4px 32px hsla(230, 72%, 32%, 0.4);
+}
 /*=============== SERVICES ===============*/
+/* Container untuk kartu layanan */
+.services_container {
+  display: grid; /* Menggunakan grid untuk tata letak */
+  gap: 2rem; /* Jarak antar kartu */
+  grid-template-columns: repeat(
+    1,
+    1fr
+  ); /* Membuat tiga kolom yang memiliki lebar yang sama */
+  padding: 20px; /* Padding di dalam container */
+}
 
+/* Mengatur gaya untuk setiap kartu layanan */
+.services_card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 2rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  transition: border 0.4s, background-color 0.4s;
+}
 
+/* Efek hover untuk kartu layanan */
+.services_card:hover {
+  transform: translateY(-5px);
+  border-color: var(--hover-border-color);
+  background-color: var(--hover-bg-color);
+}
+
+/* Mengatur gaya ikon dalam kartu */
+.services_card i {
+  display: block;
+  font-size: 3rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+/* Mengatur gaya untuk judul kartu */
+.services_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Mengatur gaya untuk deskripsi kartu */
+.services_description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* .services_container {
+  row-gap: 3rem;
+}
+.services_card {
+  text-align: center;
+}
+.services_card i {
+  display: block;
+  font-size: 3rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.services_title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+} */
 /*=============== FEATURED ===============*/
+.featured {
+  padding: 2rem;
+}
 
+.section_title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 
+.featured_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* To position navigation buttons absolutely */
+}
+
+.featured_swiper .swiper-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.featured_card {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  align-items: center; /* Memusatkan elemen secara horizontal */
+  justify-content: space-between; /* Menyebar elemen dengan ruang yang sama */
+  background-color: var(--container-color);
+  padding: 2rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  transition: border 0.4s, background-color 0.4s, transform 0.3s;
+}
+
+.featured_img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+.featured_title,
+.featured_author,
+.featured_description {
+  text-align: center;
+}
+
+.featured_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.featured_author {
+  font-size: var(--medium-font-size);
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.featured_description {
+  font-size: var(--small-font-size);
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.featured_prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.featured_discount {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+}
+
+.featured_price {
+  font-size: var(--small-font-size);
+  text-decoration: line-through;
+  color: #888;
+}
+
+.featured_card .button {
+  cursor: pointer;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.featured_actions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  position: absolute;
+  top: 2rem;
+  right: -1.5rem;
+  transition: right 0.4s;
+}
+
+.featured_actions button {
+  background: none;
+  font-size: 1.25rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.featured_card:hover .featured_actions {
+  right: 1.5rem;
+}
+
+/* Swiper Navigation Styles */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: var(--button-color);
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+/* Swiper Navigation Styles
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: var(--button-color);
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+} */
+
+/* .featured_card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 2rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border 0.4s, background-color 0.4s;
+}
+
+.featured_img {
+  width: 150px;
+  margin: 0 auto 0.75rem;
+}
+
+.featured_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.featured_prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.featured_discount {
+  color: var(--title-color);
+}
+
+.featured_price {
+  font-size: var(--small-font-size);
+  text-decoration: line-through;
+}
+
+.featured_card .button {
+  cursor: pointer;
+}
+
+.featured_actions {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  position: absolute;
+  top: 2rem;
+  right: -1.5rem;
+  transition: right 0.4s;
+}
+
+.featured_actions button {
+  background: none;
+  font-size: 1.25rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.featured_card:hover .featured_actions {
+  right: 1.5rem;
+} */
 /* Swiper class */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
 
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: border 0.4s background-color 0.4s;
+}
 
 /*=============== DISCOUNT ===============*/
+.discount_container {
+  row-gap: 3.5rem;
+}
 
+.discount_data {
+  text-align: center;
+}
 
+.discount_title {
+  margin-bottom: 1rem;
+}
+
+.discount_description {
+  margin-bottom: 2rem;
+}
+
+.discount_images {
+  display: flex;
+  justify-content: center;
+}
+
+.discount_img-1,
+.discount_img-2 {
+  width: 170px;
+}
+
+.discount_img-1 {
+  transform: translateX(1rem) rotate(-10deg);
+}
+
+.discount_img-2 {
+  transform: translateX(-1rem) rotate(10deg);
+}
 /*=============== NEW ===============*/
+.new_card {
+  display: flex;
+  align-items: center;
+  column-gap: 2.5rem;
+  background-color: var(--container-color);
+  padding: 1.5rem 1rem;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  transition: border 0.4s, background-color 0.4s;
+}
 
+.new_card:hover {
+  border: 2px solid var(--text-color);
+}
 
+.new_img {
+  width: 120px;
+}
+
+.new_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.new_prices {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.new_discount {
+  color: var(--title-color);
+}
+
+.new_price {
+  font-size: var(--small-font-size);
+  text-decoration: line-through;
+}
+
+.new_stars {
+  color: var(--first-color);
+}
+
+.new_swiper:nth-child(1) {
+  margin-bottom: 2rem;
+}
 /*=============== JOIN ===============*/
-
 
 /*=============== TESTIMONIAL ===============*/
 
-
 /*=============== FOOTER ===============*/
+.footer {
+  padding-block: 4rem 6rem;
+}
 
+.footer_container {
+  row-gap: 3rem;
+}
 
+.footer_logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--first-color);
+  font-size: var(--h3-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1.25rem;
+}
+
+.footer_logo i {
+  font-size: 1.25rem;
+}
+
+.footer_data {
+  grid-template-columns: repeat(2, max-content);
+  gap: 3rem 2rem;
+}
+
+.footer_title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.25rem;
+}
+
+.footer_link {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.footer_link {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+
+.footer_link:hover {
+  color: var(--first-color);
+}
+
+.footer_info {
+  font-style: normal;
+}
+
+.footer_social {
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.footer_social-link {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.footer_copy {
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+}
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsla(230, 16%, 85%);
+}
 
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsla(230, 16%, 65%);
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(230, 16%, 55%);
+}
 /*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.1);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
 
-
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
 /* Show Scroll Up */
-
-
+.show-scroll {
+  bottom: 6rem;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  container {
+    margin-inline: 1rem;
+  }
 
+  .nav_menu {
+    padding-inline: 3rem;
+  }
 
+  .discount_img-1,
+  .discount_img-2 {
+    width: 140px;
+  }
+
+  .new_card {
+    flex-direction: column;
+  }
+
+  .featured_card {
+    flex-direction: column;
+  }
+
+  .footer_data {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+}
 /* For medium devices */
+@media screen and (min-width: 450px) {
+  .new_card {
+    width: 390px;
+  }
+  .featured_card {
+    width: 190px;
+  }
+}
 
+@media screen and (min-width: 576px) {
+  .search_form {
+    width: 500px;
+    margin-inline: auto;
+  }
+  .login_form {
+    width: 400px;
+    justify-content: center;
+  }
+
+  .search_close,
+  .login_close {
+    width: max-content;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+
+  .nav_menu {
+    width: 380px;
+    margin-inline: auto;
+  }
+
+  .home_container,
+  .discount_container {
+    grid-template-columns: 420px;
+    justify-content: center;
+  }
+
+  .footer_data {
+    grid-template-columns: repeat(3, max-content);
+  }
+  .featured_container {
+    padding: 1rem; /* Kurangi padding pada layar kecil */
+  }
+
+  .featured_card {
+    padding: 1rem;
+  }
+
+  .featured_img {
+    width: 100px; /* Ukuran gambar lebih kecil di ponsel */
+  }
+
+  .featured_title {
+    font-size: 1.5rem; /* Ukuran font lebih kecil di ponsel */
+  }
+
+  .featured_author,
+  .featured_description {
+    font-size: var(--small-font-size);
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px; /* Ukuran tombol lebih kecil */
+    height: 30px;
+  }
+}
+
+@media screen and(min-width: 760px) {
+  .home_container {
+    grid-template-columns: 580px;
+  }
+  .home_data {
+    width: 420px;
+    justify-self: center;
+  }
+  .services_container {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 5rem;
+  }
+
+  .footer_container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home_container {
+    grid-template-columns: 580px;
+  }
+
+  .home_data {
+    width: 420px;
+    justify-content: center;
+  }
+
+  .featured_card {
+    padding: 1.5rem; /* Kurangi padding pada layar yang lebih kecil */
+    margin-bottom: 1.5rem;
+  }
+
+  .featured_img {
+    width: 120px; /* Ukuran gambar lebih kecil di tablet */
+  }
+
+  .featured_title {
+    font-size: var(--h3-font-size); /* Ukuran font judul lebih kecil */
+  }
+
+  .featured_author {
+    font-size: var(--medium-font-size); /* Sesuaikan ukuran font penulis */
+  }
+
+  .featured_description {
+    font-size: var(--small-font-size); /* Sesuaikan ukuran font deskripsi */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 35px; /* Ukuran tombol lebih kecil */
+    height: 35px;
+  }
+
+  .footer_container {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .section {
+    padding-block: 7rem 2rem; /* Menambahkan padding atas dan bawah pada bagian */
+  }
+
+  .nav {
+    height: calc(
+      var(--header-height) + 2rem
+    ); /* Mengatur tinggi navbar dengan penambahan ruang */
+    column-gap: 4rem; /* Jarak antar kolom */
+  }
+
+  .nav_link i {
+    display: none; /* Menyembunyikan ikon di navbar */
+  }
+
+  .nav_link span {
+    display: block; /* Menampilkan teks sebagai blok */
+  }
+
+  .nav_menu {
+    width: initial; /* Menyusun lebar menu navigasi */
+    margin-inline: auto 0; /* Memusatkan menu navigasi secara horizontal */
+  }
+
+  .nav_list {
+    column-gap: 4rem; /* Jarak antar item menu navigasi */
+  }
+
+  .nav_link {
+    font-weight: var(--font-medium); /* Mengatur ketebalan font untuk link */
+  }
+
+  .dark-theme .nav_menu {
+    box-shadow: none; /* Menghapus bayangan untuk tema gelap */
+  }
+
+  .home_data {
+    width: initial; /* Mengatur lebar konten rumah */
+  }
+
+  .services_container {
+    column-gap: 10rem; /* Jarak antar kolom pada layanan */
+  }
+
+  .services_card i {
+    font-size: 3.5rem; /* Ukuran ikon pada kartu layanan */
+  }
+
+  .featured_container {
+    padding-top: 2rem; /* Padding atas pada kontainer featured */
+  }
+
+  .featured_title {
+    font-size: var(--h3-font-size); /* Ukuran font judul featured */
+  }
+
+  .discount_container {
+    grid-template-columns: 615px 500px; /* Menentukan lebar kolom pada kontainer diskon */
+    justify-content: space-between; /* Mengatur jarak antar item */
+    align-items: center; /* Menyusun item secara vertikal */
+  }
+
+  .discount_data {
+    order: 1; /* Menentukan urutan item dalam grid */
+  }
+
+  .discount_data,
+  .discount_title {
+    text-align: initial; /* Menyelaraskan teks ke kiri */
+  }
+
+  .discount_description {
+    margin-bottom: 3.5rem; /* Margin bawah pada deskripsi diskon */
+  }
+
+  .discount_img-1,
+  .discount_img-2 {
+    width: 320px; /* Lebar gambar diskon */
+  }
+
+  .new_container {
+    padding-top: 2rem; /* Padding atas pada kontainer baru */
+  }
+
+  .new_card {
+    padding: 1.5rem; /* Padding pada kartu baru */
+  }
+
+  .new_img {
+    width: 120px; /* Lebar gambar baru */
+  }
+
+  .new_title {
+    font-size: var(--h3-font-size); /* Ukuran font judul baru */
+  }
+
+  /* Footer Styles */
+  .footer {
+    background-color: var(--container-color); /* Warna latar belakang footer */
+    color: #333; /* Warna teks footer */
+    padding: 4rem 2rem; /* Padding atas dan bawah pada footer */
+  }
+
+  .footer_container {
+    display: flex; /* Menggunakan flexbox untuk penataan baris */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    gap: 2rem; /* Jarak antar elemen */
+    max-width: 1200px; /* Maksimum lebar kontainer footer */
+    margin: 0 auto; /* Memusatkan footer secara horizontal */
+  }
+
+  .footer_logo {
+    display: flex;
+    align-items: center; /* Menyelaraskan ikon dan teks logo secara vertikal */
+    font-size: 1.8rem; /* Ukuran font logo */
+    color: #007bff; /* Warna teks logo */
+    text-decoration: none; /* Menghapus garis bawah dari tautan logo */
+  }
+
+  .footer_logo i {
+    font-size: 2.5rem; /* Ukuran ikon logo */
+    margin-right: 0.5rem; /* Jarak antara ikon dan teks logo */
+  }
+
+  .footer_description {
+    margin-top: 1rem; /* Margin atas pada deskripsi footer */
+    font-size: 1rem; /* Ukuran font deskripsi */
+    color: #6c757d; /* Warna teks deskripsi */
+  }
+
+  .footer_data {
+    display: flex; /* Menyusun data footer dalam baris */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    gap: 2rem; /* Jarak antar elemen data footer */
+    flex: 1; /* Menggunakan ruang yang tersedia */
+    justify-content: space-between; /* Menyebar elemen secara merata */
+  }
+
+  .footer_data div {
+    flex: 1; /* Menyebar ruang untuk setiap div */
+    min-width: 150px; /* Lebar minimum untuk setiap div */
+  }
+
+  .footer_title {
+    font-size: 1.2rem; /* Ukuran font judul footer */
+    margin-bottom: 1rem; /* Margin bawah pada judul footer */
+    color: #343a40; /* Warna teks judul */
+  }
+
+  .footer_links {
+    list-style: none; /* Menghapus bullet dari daftar link */
+    padding: 0; /* Menghapus padding default */
+  }
+
+  .footer_links li {
+    margin-bottom: 0.5rem; /* Margin bawah pada item link */
+  }
+
+  .footer_link {
+    text-decoration: none; /* Menghapus garis bawah dari tautan */
+    color: #007bff; /* Warna tautan */
+    transition: color 0.3s; /* Efek transisi untuk perubahan warna */
+  }
+
+  .footer_link:hover {
+    color: #0056b3; /* Warna tautan saat hover */
+  }
+
+  .footer_social {
+    display: flex; /* Menyusun ikon sosial media dalam baris */
+    gap: 1.5rem; /* Jarak antar ikon sosial media */
+  }
+
+  .footer_social-link {
+    font-size: 1.5rem; /* Ukuran font untuk ikon sosial media */
+    color: #007bff; /* Warna ikon sosial media */
+    transition: color 0.3s; /* Efek transisi untuk perubahan warna ikon */
+  }
+
+  .footer_social-link:hover {
+    color: #0056b3; /* Warna ikon sosial media saat hover */
+  }
+
+  .footer_copy {
+    margin-top: 2rem; /* Margin atas pada teks hak cipta di footer */
+    text-align: center; /* Menyelaraskan teks hak cipta ke tengah */
+    font-size: 0.875rem; /* Ukuran font teks hak cipta */
+    color: #0056b3; /* Warna teks hak cipta */
+  }
+
+  .scrollup {
+    right: 3rem; /* Posisi tombol scroll-up dari kanan */
+  }
+
+  .show-scroll {
+    bottom: 3rem; /* Posisi tombol scroll di bagian bawah */
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .home_container {
+    grid-template-columns: 435px 745px;
+    align-items: center;
+    padding-block: 7rem 2rem;
+  }
+  .home_data {
+    text-align: initial;
+  }
+  .home_description {
+    margin-bottom: 4rem;
+  }
+  .home_article,
+  .home_img {
+    width: 300px;
+  }
+  .login_form {
+    width: 300px; /* Lebar penuh untuk formulir login */
+    justify-content: center; /* Memusatkan konten formulir login secara horizontal */
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 430px) {
+  .featured {
+    padding: 1rem; /* Sedikit padding untuk layar yang lebih besar */
+  }
+
+  .section_title {
+    font-size: 1.75rem; /* Ukuran font judul bagian sedikit lebih besar */
+  }
+
+  .featured_card {
+    padding: 1.25rem; /* Tambahkan padding kartu */
+  }
+
+  .featured_img {
+    width: 100px; /* Ukuran gambar lebih besar */
+  }
+
+  .featured_title {
+    font-size: 1.5rem; /* Ukuran font lebih besar */
+  }
+
+  .featured_author,
+  .featured_description {
+    font-size: 0.875rem; /* Ukuran font sedikit lebih besar */
+  }
+
+  .featured_actions {
+    top: 1.25rem; /* Sesuaikan posisi tindakan */
+    right: -1.25rem;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px; /* Ukuran tombol lebih besar */
+    height: 30px;
+  }
+}

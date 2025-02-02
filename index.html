@@ -1,92 +1,1347 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-      <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+   <!--=============== SWIPER CSS ===============-->
+   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
 
-      <title>Responsive book website - Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         
-      </header>
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
 
-      <!--==================== SEARCH ====================-->
-      <div class="search" id="search-content">
-         
+   <title>Responsive book website</title>
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#" class="nav_logo">
+            <i class="ri-book-3-line"></i> E-book
+         </a>
+         <div class="nav_menu">
+            <ul class="nav_list">
+               <li class="nav_item">
+                  <a href="#home" class="nav_link active-link">
+                     <i class="ri-home-line"></i>
+                     <span>Home</span>
+                  </a>
+               </li>
+
+               <li class="nav_item">
+                  <a href="#Featured" class="nav_link">
+                     <i class="ri-book-3-line"></i>
+                     <span>Featured</span>
+                  </a>
+               </li>
+
+               <li class="nav_item">
+                  <a href="#discount" class="nav_link">
+                     <i class="ri-price-tag-3-line"></i>
+                     <span>About Us </span>
+                  </a>
+               </li>
+
+               <li class="nav_item">
+                  <a href="#new" class="nav_link">
+                     <i class="ri-bookmark-line"></i>
+                     <span>Top Books</span>
+                  </a>
+               </li>
+
+               <!-- <li class="nav_item">
+                  <a href="#testimonial" class="nav_link">
+                     <i class="ri-message-3-line"></i>
+                     <span>Testimonial</span>
+                  </a>
+               </li> -->
+            </ul>
+         </div>
+         <div class="nav_actions">
+            <!-- search button -->
+            <i class="ri-search-line search-button" id="search-button"></i>
+            <!-- login -->
+            <i class="ri-user-line login-button" id="login-button"></i>
+            <!-- themea -->
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== SEARCH ====================-->
+   <div class="search" id="search-content">
+      <form action="" class="search_form">
+         <i class="ri-search-line search_icon"></i>
+         <input type="search" placeholder="What are you looking for?" class="search_input">
+      </form>
+      <i class="ri-close-line search_close" id="search-close"></i>
+   </div>
+
+   <!--==================== LOGIN ====================-->
+   <div class="login grid" id="login-content">
+      <form action="" class="login_form grid">
+         <h3 class="login_title">Log In</h3>
+         <div class="login_group grid">
+            <div>
+               <label for="login-email" class="login_label">Email</label>
+               <input type="email" placeholder="Write your email" id="login-email" class="login_input">
+            </div>
+            <div>
+               <label for="login-pass" class="login_label">Password</label>
+               <input type="password" placeholder="Enter your password" id="login-password" class="login_input">
+            </div>
+         </div>
+         <div>
+            <span class="login_signup">
+               You do not have an account? <a href="#">Sign up</a>
+            </span>
+            <a href="#" class="login_forgot">
+               You forgot your password
+            </a>
+            <button type="submit" class="login_button button">Log In</button>
+         </div>
+      </form>
+      <i class="ri-close-line login_close" id="login-close"></i>
+   </div>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+         <div class="home_container container grid">
+            <div class="home_data">
+               <h1 class="home_title">
+                  Browse & <br>
+                  Select E-Books
+               </h1>
+               <p class="home_description">
+                  Find the best e-books from your favorite
+                  writers, explore hundreds of books with all
+                  possible categories.
+               </p>
+               <a href="#" class="button">Explore Now</a>
+            </div>
+            <div class="home_images">
+               <div class="home_swiper swiper">
+                  <div class="swiper-wrapper">
+                     <article class="home_article swiper-slide">
+                        <img src="/assets/img/home-book-1.png" alt="image" class="home_img">
+                     </article>
+
+                     <article class="home_article swiper-slide">
+                        <img src="/assets/img/home-book-2.png" alt="image" class="home_img">
+                     </article>
+
+                     <article class="home_article swiper-slide">
+                        <img src="/assets/img/home-book-3.png" alt="image" class="home_img">
+                     </article>
+
+                     <article class="home_article swiper-slide">
+                        <img src="/assets/img/home-book-4.png" alt="image" class="home_img">
+                     </article>
+                     <!-- <article class="home_article swiper-slide">
+                        <img src="/assets/img/book-7.png" alt="image" class="home_img">
+                     </article> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== SERVICES ====================-->
+      <section class="services section">
+         <div class="services_container container grid">
+            <!-- Card 1: Akses Mudah -->
+            <article class="services_card">
+               <i class="ri-device-line"></i>
+               <h3 class="services_title">Easy Access</h3>
+               <p class="services_description">Enjoy quick access to thousands of book titles with just a few clicks,
+                  anywhere and anytime.</p>
+            </article>
+
+            <!-- Card 2: Hemat Biaya -->
+            <article class="services_card">
+               <i class="ri-wallet-line"></i>
+               <h3 class="services_title">Cost Savings</h3>
+               <p class="services_description">E-books are more affordable than printed books, with no additional costs
+                  for shipping or storage.</p>
+            </article>
+
+            <!-- Card 3: Ramah Lingkungan -->
+            <article class="services_card">
+               <i class="ri-leaf-line"></i>
+               <h3 class="services_title">Eco-Friendly</h3>
+               <p class="services_description">MReduce paper and ink usage—e-books are a more environmentally friendly
+                  option.</p>
+            </article>
+
+            <!-- Card 4: Pembaruan Otomatis
+            <article class="services_card">
+               <i class="ri-refresh-line"></i>
+               <h3 class="services_title">Pembaruan Otomatis</h3>
+               <p class="services_description">Dapatkan pembaruan otomatis untuk buku yang sudah dibeli, termasuk edisi
+                  baru dan perbaikan konten.</p>
+            </article> -->
+         </div>
+      </section>
+
+
+      <!-- <section class="services section">
+         <div class="services_container container grid">
+            <article class="services_card">
+               <i class="ri-truck-line"></i>
+               <h3 class="services_title">Free Shipping</h3>
+               <p class="services_description">Order More Than $100</p>
+            </article>
+
+            <article class="services_card">
+               <i class="ri-lock-2-line"></i>
+               <h3 class="services_title">Secure Payment</h3>
+               <p class="services_description">100% Secure Payment</p>
+            </article>
+
+            <article class="services_card">
+               <i class="ri-customer-service-2-line"></i>
+               <h3 class="services_title">24/7 Support</h3>
+               <p class="services_description">Call us anytime</p>
+            </article>
+         </div>
+      </section> -->
+
+      <!--==================== FEATURED ====================-->
+      <section class="featured section" id="featured">
+         <h2 class="section_title">Featured Books</h2>
+
+         <div class="featured_container container">
+            <div class="featured_swiper swiper">
+               <div class="swiper-wrapper">
+                  <!-- Book Card 1 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-11.jpg" alt="Book Title 1" class="featured_img">
+                     <h3 class="featured_title">Bahasa Indonesia</h3>
+                     <p class="featured_author">Maman Suryaman, Dr, M.Pd / Istiqomah, S.Pd., M.Pd. / Suherli, Prof, Dr,
+                        M.Pd.</p>
+                     <p class="featured_description">
+                        Buku ini merupakan buku siswa yang dipersiapkan Pemerintah dalam rangka implementasi Kurikulum
+                        2013.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/62260/index.html?_gl=1*14fiod0*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkxMzcxNC43LjEuMTcyNDkxMzgxMS4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <!-- Book Card 2 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-12.jpg" alt="Book Title 2" class="featured_img">
+                     <h3 class="featured_title"> Agama Islam </h3>
+                     <p class="featured_author">Mustahdi / Mustakim</p>
+                     <p class="featured_description">
+                        Buku Pendidikan Agama Islam dan Budi Pekerti SMA Kelas XI berisi mengenai pengembangan
+                        pengetahuan, nilai-nilai sikap spiritual dan sosial
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/44063/index.html?_gl=1*gchviq*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMDk5NS4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <!-- Book Card 3 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-13.png" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Pendidikan Pancasila</h3>
+                     <p class="featured_author">Tolib / Nuryadi, S.Pd</p>
+                     <p class="featured_description">
+                        Buku Teks Pendidikan Pancasila dan Kewarganegaraan (PPKn) Kelas X untuk jenjang SMA/SMK/MA/MAK
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/43121/index.html?_gl=1*1c9mzaj*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMTU0Ny4wLjAuMA.."
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-14.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Sejarah Indonesia</h3>
+                     <p class="featured_author">Sardiman AM / Amurwani</p>
+                     <p class="featured_description">
+                        Buku ini menjabarkan usaha minimal yang harus dilakukan siswa untuk mencapai kompetensi yang
+                        diharapkan. Sesuai dengan pendekatan yang digunakan
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/23663/index.html?_gl=1*1l86obb*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMTgwOC4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-15.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Sejarah Indonesia</h3>
+                     <p class="featured_author">Abdurakhman / Arif</p>
+                     <p class="featured_description">
+                        Buku ini menjabarkan usaha minimal yang harus dilakukan siswa untuk mencapai kompetensi yang
+                        diharapkan. Sesuai dengan pendekatan yang digunakan
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/24244/index.html?_gl=1*1yt2tdv*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMzA1My4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-17.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Sistem Operasi Jaringan</h3>
+                     <p class="featured_author">Kadek Surya Pranata</p>
+                     <p class="featured_description">
+                        Sistem Operasi Jaringan merupakan salah satu mata pelajaran wajib untuk paket keahlian Teknik
+                        Komputer dan Jaringan.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/52427/index.html?_gl=1*qevv9j*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMzE0My4wLjAuMA.."
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-18.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Olahraga dan Kesehatan</h3>
+                     <p class="featured_author">Bambang Abduljabar</p>
+                     <p class="featured_description">
+                        Buku ini menjabarkan usaha minimal yang harus dilakukan siswa untuk mencapai kompetensi yang
+                        diharapkan.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/24167/index.html?_gl=1*zjql7v*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMzMwNi4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-16.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Pendidikan Pancasila</h3>
+                     <p class="featured_author">Mohamad Sodeli</p>
+                     <p class="featured_description">
+                        Buku ini merupakan buku siswa yang dipersiapkan Pemerintah dalam rangka implementasi Kurikulum
+                        2013.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/62540/index.html?_gl=1*ntug84*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMzY0OS4wLjAuMA.."
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-19.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Seni Budaya</h3>
+                     <p class="featured_author">Tati Narawati / Sem Cornelyoes Bangun / Siswandi</p>
+                     <p class="featured_description">
+                        Buku ini menyajikan pembelajaran aktivitas berapresiasi, berkarya, (berekspresi, bereksperimen)
+                        dengan pendekatan saintifik.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/44465/index.html?_gl=1*156dkoh*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyMzkyMS4wLjAuMA.."
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-20.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Bahasa Inggris</h3>
+                     <p class="featured_author">Mahrukh Bashir</p>
+                     <p class="featured_description">
+                        Buku ini merupakan buku siswa yang dipersiapkan Pemerintah dalam rangka implementasi Kurikulum
+                        2013. Buku siswa ini disusun dan ditelaah oleh berbagai pihak.
+                     </p>
+                     <a href="https://epaper.myedisi.com/bse/44661/index.html?_gl=1*d4dkj8*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDkyMDEzNi44LjEuMTcyNDkyNDE5Ni4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+               </div>
+
+               <!-- Swiper Navigation Buttons -->
+               <div class="swiper-button-prev">
+                  <i class="ri-arrow-left-s-line"></i>
+               </div>
+               <div class="swiper-button-next">
+                  <i class="ri-arrow-right-s-line"></i>
+               </div>
+            </div>
+         </div>
+
+         <div class="featured_container container">
+            <div class="featured_swiper swiper">
+               <div class="swiper-wrapper">
+                  <!-- Book Card 1 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-32.jpg" alt="Book Title 1" class="featured_img">
+                     <h3 class="featured_title">COD di SMP</h3>
+                     <p class="featured_author"> Fike Fanistya Wening / Putri Jeni Silistiyawati / Arrin Candra Kirana
+                     </p>
+                     <p class="featured_description">
+                        "Hehhh!!!! Maksud kamu apa. Ternyata kamu diem-diem nyembunyiin cewek lain ya di belakang aku"
+                        kata Andin sambil marah marah dengan Arda.
+                     </p>
+                     <a href="https://www.myedisi.com/kaizen/326461/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <!-- Book Card 2 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-33.jpg" alt="Book Title 2" class="featured_img">
+                     <h3 class="featured_title"> Here's Our Story </h3>
+                     <p class="featured_author">Widia Larasati / Candra Norin Cantika / Ayundha Diana Safitri</p>
+                     <p class="featured_description">
+                        Anya adalah remaja yang tinggal di kota dan sedang menderita penyakit dyspnea. Anya hidup
+                        sendiri dengan neneknya,karena orang tuanya berkerja di luar
+                     </p>
+                     <a href="https://www.myedisi.com/kaizen/326561/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <!-- Book Card 3 -->
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-42.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Jersey Number 04</h3>
+                     <p class="featured_author">Ayundha Diana Safitri</p>
+                     <p class="featured_description">
+                        Aydin adalah anak dari pemlik bisnis terkenal di Tokyo, dia harus pindah sekolah karena papanya
+                        menyuruhnya untuk mencari informasi tentang teman lamanya
+                     </p>
+                     <a href="https://www.myedisi.com/kaizen/326601/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-34.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Cangkir Sore</h3>
+                     <p class="featured_author">Diny / Niken Dias</p>
+                     <p class="featured_description">
+                        Kumpulan Kisah Curahan Hati Rahasia Perempuan
+                        Saat Anda membaca buku ini, kami berharap semesta berkenan untuk menghentikan waktu sejenak agar
+                        seluruh rasa lelah, sedih, dan sepi Anda dapat
+                     </p>
+                     <a href="https://www.myedisi.com/jejakpustaka/175760/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-35.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Perempuan Penunggu Senja</h3>
+                     <p class="featured_author">Marjiyanti Djoyo Utomo</p>
+                     <p class="featured_description">
+                        Perempuan Penunggu Senja, jangan biarkan air mata menjadi akhir dari ikhtiarmu. Bertahanlah,
+                        karena hidup bukan untuk ditangisi.
+                     </p>
+                     <a href="https://www.myedisi.com/anantavidya/405124/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-39.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Tentang Kamu dan Rasa</h3>
+                     <p class="featured_author">Agisni Rahayu</p>
+                     <p class="featured_description">
+                        Senin pagi, semua murid dan guru SMA Astronesia sedang mengikuti upacara. Seorang gadis mengeluh
+                        karena pemberi amanat upacara tidak kunjung menutup pidatonya
+                     </p>
+                     <a href="https://www.myedisi.com/lintangsemesta/372661/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-36.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Ternyata Itu Kamu</h3>
+                     <p class="featured_author">Linda Imelda Sihotang</p>
+                     <p class="featured_description">
+                        Dipaksa oleh keadaan adalah kata yang tepat dan memuakkan bagi Sere. Seandainya kita bisa
+                        memilih dengan apa dan bagaimana kita terlahir, mungkin akan berbeda
+                     </p>
+                     <a href="https://www.myedisi.com/anantavidya/404423/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-38.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">I am Hurt</h3>
+                     <p class="featured_author">Agisni Rahayu</p>
+                     <p class="featured_description">
+                        Di sebuah ruangan nan megah, tampak dua gadis remaja tengah beradu mulut. Tavisha Emperatriza
+                        Kayana dan saudaranya yang bernama Claruna Nataya
+                     </p>
+                     <a href="https://www.myedisi.com/lintangsemesta/372641/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-40.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Jodoh yang Dirindukan</h3>
+                     <p class="featured_author">Yenni Rahman</p>
+                     <p class="featured_description">
+                        Raka Adithama adalah lelaki pertama yang membuatku jatuh cinta pada pandangan pertama. Aku yakin
+                        Raka adalah jodoh terbaik yang diberikan untukku.
+                     </p>
+                     <a href="https://www.myedisi.com/anantavidya/404402/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-37.jpg" alt="Book Title 3" class="featured_img">
+                     <h3 class="featured_title">Perempuan Berhati Samudera</h3>
+                     <p class="featured_author">Ervina Pratiwi</p>
+                     <p class="featured_description">
+                        Kisah diatas belum berakhir sampai di malam itu.keesokan hari nya, menjelang pagi.terdengar
+                        suara huruhara di dapur.sang istri yang sedang memasak,sambil
+                     </p>
+                     <a href="https://www.myedisi.com/ruangkarya/363300/preview#page=1" class="button"
+                        target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+               </div>
+
+               <!-- Swiper Navigation Buttons -->
+               <div class="swiper-button-prev">
+                  <i class="ri-arrow-left-s-line"></i>
+               </div>
+               <div class="swiper-button-next">
+                  <i class="ri-arrow-right-s-line"></i>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- <section class="featured section" id="featured">
+         <h2 class="section_title">
+            Featured Books
+         </h2>
+
+         <div class="featured_container container">
+            <div class="featured_swiper swiper">
+               <div class="swiper-wrapper">
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-11.jpg" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <a href="https://epaper.myedisi.com/bse/44641/index.html?_gl=1*1v3xfip*_ga*OTc2ODM1OTA2LjE3MjI0MDMyNTA.*_ga_4L5CYYRHYM*MTcyNDM4MTQ2MC42LjEuMTcyNDM4MjY3OC4wLjAuMA..#page=1"
+                        class="button" target="_blank">Read</a>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-2.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-3.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-4.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-5.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-6.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-7.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-8.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-9.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+
+                  <article class="featured_card swiper-slide">
+                     <img src="/assets/img/book-10.png" alt="image" class="featured_img">
+
+                     <h2 class="featured_title">Featured Book</h2>
+                     <div class="featured_prices">
+                        <span class="featured_discount">$11.99</span>
+                        <span class="featured_price">$19.99</span>
+                     </div>
+                     <button class="button">Add To Cart</button>
+                     <div class="featured_actions">
+                        <button><i class="ri-search-line"></i></button>
+                        <button><i class="ri-heart-3-line"></i></button>
+                        <button><i class="ri-eye-line"></i></button>
+                     </div>
+                  </article>
+               </div> -->
+
+      <!-- <div class="swiper-button-prev">
+                  <i class="ri-arrow-left-s-line"></i>
+               </div>
+               <div class="swiper-button-next">
+                  <i class="ri-arrow-right-s-line"></i>
+               </div>
+            </div>
+         </div>
+      </section> -->
+
+      <!--==================== DISCOUNT ====================-->
+      <section class="discount section" id="discount">
+         <div class="discount_container container grid">
+            <div class="discount-data">
+               <h2 class="discount_title section_title">
+                  Discover the Best E-Books for Your Leisure Reading!
+               </h2>
+
+               <p class="discount_description">
+                  Welcome to E-book, where we are passionate about bringing the best e-books to avid
+                  readers like you. Our mission is to connect you with a world of stories, knowledge, and inspiration
+                  through a diverse collection of e-books.
+               </p>
+               <!-- <a href="#" class="button">Shop Now</a> -->
+            </div>
+
+            <div class="discount_images">
+               <img src="/assets/img/discount-book-1.png" alt="home_image" class="discount_img-1">
+               <img src="/assets/img/discount-book-2.png" alt="home_image" class="discount_img-2">
+            </div>
+         </div>
+      </section>
+
+      <!--==================== NEW BOOKS ====================-->
+      <section class="new section" id="new">
+         <h2 class="section_title">
+            Top Books
+         </h2>
+         <div class="new_container container">
+            <div class="new_swiper swiper">
+               <div class="swiper-wrapper">
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-1.png" alt="image" class="new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-2.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-3.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-4.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-5.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-6.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-7.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-8.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide>
+                     <img src=" /assets/img/book-9.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-10.png" alt="image" class="new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="new_swiper swiper">
+               <div class="swiper-wrapper">
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-9.png" alt="image" class="new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-10.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-8.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-7.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-6.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-5.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-4.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-3.png" alt="image" class=" new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+
+                  <a href="#" class="new_card swiper-slide">
+                     <img src="/assets/img/book-1.png" alt="image" class="new_img">
+                     <div>
+                        <h2 class="new_title">New Book</h2>
+                        <div class="new_prices">
+                           <!-- <span class="new_discount">$7.99</span>
+                           <span class="new price">$14.99</span> -->
+                        </div>
+                        <div class="new_stars">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== JOIN ====================-->
+      <section class="join section">
+
+      </section>
+
+      <!--==================== TESTIMONIAL ====================-->
+      <section class="testimonial section" id="testimonial">
+
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer_container">
+         <div>
+            <a href="#" class="footer_logo">
+               <i class="ri-book-3-line"></i> E-book
+            </a>
+            <p class="footer_description">
+               Find and explore the best <br>
+               eBooks from all your <br>
+               favorite writers.
+            </p>
+         </div>
+         <div class="footer_data">
+            <div>
+               <h3 class="footer_title">About</h3>
+               <ul class="footer_links">
+                  <li><a href="#" class="footer_link">Awards</a></li>
+                  <li><a href="#" class="footer_link">FAQs</a></li>
+                  <li><a href="#" class="footer_link">Privacy policy</a></li>
+                  <li><a href="#" class="footer_link">Terms of services</a></li>
+               </ul>
+            </div>
+            <div>
+               <h3 class="footer_title">Company</h3>
+               <ul class="footer_links">
+                  <li><a href="#" class="footer_link">Blogs</a></li>
+                  <li><a href="#" class="footer_link">Community</a></li>
+                  <li><a href="#" class="footer_link">Our team</a></li>
+                  <li><a href="#" class="footer_link">Help center</a></li>
+               </ul>
+            </div>
+            <div>
+               <h3 class="footer_title">Contact</h3>
+               <ul class="footer_links">
+                  <li>
+                     <address class="footer_inf">Luar Batang<br>Jakarta Utara</address>
+                  </li>
+                  <li>
+                     <address class="footer_inf">atanjun45@gmail.com <br>0987-654-321</address>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h3 class="footer_title">Social</h3>
+               <div class="footer_social">
+                  <a href="https://www.facebook.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-facebook-circle-fill"></i>
+                  </a>
+                  <a href="https://www.instagram.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-instagram-fill"></i>
+                  </a>
+                  <a href="https://twitter.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-twitter-fill"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <span class="footer_copy">
+            &#169; All Rights Reserved By M.irvan
+         </span>
       </div>
+   </footer>
 
-      <!--==================== LOGIN ====================-->
-      <div class="login grid" id="login-content">
-         
+
+   <!-- <footer class="footer">
+      <div class="footer_container container grid">
+         <div>
+            <a href="#" class="footer_logo">
+               <i class="ri-book-3-line"></i> E-book
+            </a>
+            <p class="footer_description">
+               Find and explore the best <br>
+               eBooks from all your <br>
+               favorite writers.
+            </p>
+         </div>
+         <div class="footer_data grid">
+            <div>
+               <h3 class="footer_title">About</h3>
+               <ul class="footer_link">
+                  <li>
+                     <a href="#" class="footer_link"> Awards</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link"> FAQs</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link">Privacy policy</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link">Terms of services</a>
+                  </li>
+
+               </ul>
+            </div>
+
+            <div>
+               <h3 class="footer_title">Company</h3>
+               <ul class="footer_link">
+                  <li>
+                     <a href="#" class="footer_link">Blogs</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link"> Community</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link"> Our team</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="footer_link">Help center</a>
+                  </li>
+
+               </ul>
+            </div>
+            <div>
+               <h3 class="footer_title">Contact</h3>
+               <ul class="footer_link">
+                  <li>
+                     <address class="footer_inf">
+                        Av. Hacienda <br>
+                        Lima 4321, Perú
+                     </address>
+                  </li>
+                  <li>
+                     <address class="footer_inf">
+                        e.book@email.com <br>
+                        0987-654-321
+                     </address>
+                  </li>
+               </ul>
+            </div>
+
+            <div>
+               <h3 class="footer_title">Social</h3>
+
+               <div class="footer_social">
+                  <a href=" https://www.facebook.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-facebook-circle-fill"></i>
+                  </a>
+
+                  <a href=" https://www.instagram.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-instagram-fill"></i>
+                  </a>
+
+                  <a href="https://twitter.com/" target="_blank" class="footer_social-link">
+                     <i class="ri-twitter-fill"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
       </div>
+      <span class="footer_copy">
+         &#169; All Rights Reserved By M.irvan
+      </span>
+   </footer> -->
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            
-         </section>
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+   </a>
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section">
-            
-         </section>
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="/assets/js/scrollreveal.min.js"></script>
 
-         <!--==================== FEATURED ====================-->
-         <section class="featured section" id="featured">
-            
-         </section>
+   <!--=============== SWIPER JS ===============-->
+   <script src="assets/js/swiper-bundle.min.js"></script>
 
-         <!--==================== DISCOUNT ====================-->
-         <section class="discount section" id="discount">
-            
-         </section>
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+</body>
 
-         <!--==================== NEW BOOKS ====================-->
-         <section class="new section" id="new">
-            
-         </section>
-
-         <!--==================== JOIN ====================-->
-         <section class="join section">
-            
-         </section>
-
-         <!--==================== TESTIMONIAL ====================-->
-         <section class="testimonial section" id="testimonial">
-            
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
-
-      <!--========== SCROLL UP ==========-->
-      
-
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
-
-      <!--=============== SWIPER JS ===============-->
-      <script src=""></script>
-
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
 </html>
